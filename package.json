@@ -4,12 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/server.js",
-    "debug": "node --inspect ./src/server.js",
+    "start": "nodemon --exec npm run babel-node --  --inspect ./src/server.js",
+    "babel-node": "babel-node --presets=latest",
+    "build": "babel src -d dist",
     "watch": "nodemon",
     "serve-debug": "nodemon --inspect",
-    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Node\" -c \"green.bold,yellow.bold\" \"npm run serve-debug\"",
+    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Nodemon, Babel\" -c \"green.bold,yellow.bold\" \"npm run serve-debug\" ",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
   },
   "repository": {
     "type": "git",
@@ -27,11 +33,14 @@
     "koa": "^2.5.0",
     "koa-body": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
+    "koa-combine-routers": "^3.0.0",
     "koa-logger": "^3.2.0",
     "koa-response-time": "^2.0.0",
     "koa-router": "^7.4.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
     "concurrently": "^3.5.1",
     "nodemon": "^1.17.3"
   }
