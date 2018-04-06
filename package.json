@@ -4,13 +4,32 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec npm run babel-node --  --inspect ./src/server.js",
+    "start": "NODE_ENV=dev nodemon --exec npm run babel-node --  --inspect ./src/server.js",
     "babel-node": "babel-node --presets=latest",
-    "build": "babel src -d dist",
+    "build": "rimraf dist && NODE_ENV=prod babel src -d dist -s",
     "watch": "nodemon",
     "serve-debug": "nodemon --inspect",
     "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Nodemon, Babel\" -c \"green.bold,yellow.bold\" \"npm run serve-debug\" ",
+    "lint": "eslint --fix src && prettier --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "plugins": [
+      "jest"
+    ],
+    "extends": [
+      "standard",
+      "prettier",
+      "plugin:jest/recommended"
+    ],
+    "env": {
+      "jest/globals": true
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
   },
   "babel": {
     "presets": [
@@ -40,8 +59,15 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
     "babel-preset-latest": "^6.24.1",
     "concurrently": "^3.5.1",
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.9.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jest": "^21.15.0",
     "nodemon": "^1.17.3"
   }
 }
