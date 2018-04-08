@@ -8,13 +8,9 @@ var bodyParser = require('koa-bodyparser');
 import routes from './routes'
 
 var app = new koa();
-
-
-
 app.use(bodyParser());
 app.use(routes);
 // app.use(koaBody({
 //     jsonLimit: '1kb'
 // }));
-
 export default app
