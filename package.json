@@ -12,6 +12,7 @@
     "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Nodemon, Babel\" -c \"green.bold,yellow.bold\" \"npm run serve-debug\" ",
     "lint": "eslint --fix src",
     "prettier": "prettier --write \"src/**/*.js\"",
+    "startDockers": "docker-compose -f ./docker/docker-compose.yml up",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "eslintConfig": {
@@ -50,13 +51,17 @@
   "homepage": "https://github.com/helderjnpinto/koajs-boilerplate#readme",
   "dependencies": {
     "co-body": "^5.1.1",
+    "couchdb-promises": "^3.0.0",
+    "cradle": "^0.7.1",
     "koa": "^2.5.0",
     "koa-body": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
     "koa-combine-routers": "^3.0.0",
     "koa-logger": "^3.2.0",
+    "koa-parse-json": "^1.0.1",
     "koa-response-time": "^2.0.0",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "utils-strings": "^0.1.4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

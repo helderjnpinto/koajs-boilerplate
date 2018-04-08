@@ -1,0 +1,30 @@
+# Start the app using docker-compose pull && docker-compose up to make sure you have the latest image
+version: '2.1'
+
+services:
+  couchdb:
+    # The official image: https://store.docker.com/images/263ad544-d7c7-4892-8244-fe78b6231265
+    image: couchdb:2.1.1
+    ports:
+      - "5984:5984"
+    networks:
+      koa-network:
+        aliases:
+          - couchDbForSij
+    environment:
+      # We set the environment variable of the host as an environment variable in the container
+      # See also: https://docs.docker.com/compose/compose-file/#variable-substitution
+      - COUCHDB_USER=${COUCHDB_USER:-local_admin}
+      - COUCHDB_PASSWORD=${COUCHDB_PASSWORD:-m8SoSdK4RdcfGe9JeZgRULmaedfZMLbUiGcG}
+   # If you're on Windows, make sure you share the Windows drive used here. Go to Docker's settings -> Shared Drives
+    volumes:
+       # So CouchDB can pick up the configuration
+       - ./config/couchdb/local.ini:/opt/couchdb/etc/local.ini
+       # Per default, CouchDB mounts a data volume inside the container at /usr/local/var/lib/couchdb
+       - ./persistentData:/usr/local/var/lib/couchdb
+       # The log location for CouchDB inside the Docker container is defined in local.ini
+       - ./logs:/usr/local/var/log/couchdb
+
+networks:
+  koa-network:
+    driver: bridge
