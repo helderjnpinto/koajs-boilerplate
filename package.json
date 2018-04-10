@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=dev nodemon --exec npm run babel-node --  --inspect ./src/server.js",
+    "start": "NODE_ENV=dev nodemon --exec npm run babel-node -- ./src/server.js",
     "babel-node": "babel-node --presets=latest",
     "build": "rimraf dist && npm run prettier  && NODE_ENV=prod babel src -d dist -s",
     "watch": "nodemon",
-    "serve-debug": "nodemon --inspect",
+    "serve-debug": "NODE_ENV=dev nodemon --exec npm run babel-node --  --inspect ./src/server.js",
     "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Nodemon, Babel\" -c \"green.bold,yellow.bold\" \"npm run serve-debug\" ",
     "lint": "eslint --fix src",
     "prettier": "prettier --write \"src/**/*.js\"",
@@ -64,7 +64,9 @@
     "koa-parse-json": "^1.0.1",
     "koa-response-time": "^2.0.0",
     "koa-router": "^7.4.0",
-    "utils-strings": "^0.1.4"
+    "utils-strings": "^0.1.4",
+    "web": "0.0.2",
+    "web3-eth": "^1.0.0-beta.33"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -77,6 +79,8 @@
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.10.0",
     "eslint-plugin-jest": "^21.15.0",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
     "nodemon": "^1.17.3",
     "prettier-eslint": "^8.8.1",
     "pretty": "^2.0.0"

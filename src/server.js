@@ -1,6 +1,6 @@
+import app from './app'
 var logger = require('koa-logger')
 
-import app from './app'
 
 app.use(logger())
 
