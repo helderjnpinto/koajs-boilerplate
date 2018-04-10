@@ -59,7 +59,6 @@
     "koa-bodyparser": "^4.2.0",
     "koa-combine-routers": "^3.0.0",
     "koa-convert": "^1.2.0",
-    "koa-graphql": "^0.7.5",
     "koa-logger": "^3.2.0",
     "koa-mount": "^3.0.0",
     "koa-parse-json": "^1.0.1",
