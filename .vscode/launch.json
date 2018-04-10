@@ -8,7 +8,11 @@
             "type": "node",
             "request": "attach",
             "name": "Attach by Process ID",
-            "processId": "${command:PickProcess}"
+            "processId": "${command:PickProcess}",
+            "protocol": "inspector",
+            "port": 9229,
+            "restart": true,
+            "sourceMaps": true
         }
     ]
 }

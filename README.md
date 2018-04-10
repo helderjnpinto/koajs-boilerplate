@@ -18,6 +18,8 @@ When your docker build the image and run you can access in:
     - https://www.tutorialspoint.com/couchdb
     - https://www.webcodegeeks.com/web-development/building-a-blog-application-with-couchdb/
 
-
+# vscode plugins
+## Babel ES6/ES7
+    - ext install dzannotti.vscode-babel-coloring
 # GRAPHQL 
     - https://github.com/chentsulin/awesome-graphql
