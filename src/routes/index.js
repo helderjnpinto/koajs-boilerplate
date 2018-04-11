@@ -1,6 +1,6 @@
 import combineRouters from 'koa-combine-routers'
 import primary from './primary'
+import infura from './infura'
 
-const router = combineRouters([primary])
 
-export default router
+export default combineRouters(infura, primary)

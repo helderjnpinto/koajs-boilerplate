@@ -1,9 +1,8 @@
 import couchdb from '../db/couchdb';
 
 
-export const get = async (ctx, next) => {
+export const get = async ctx => {
   ctx.body = 'Hello World!'
-  await next()
 }
 
 export const post = async (ctx, next) => {

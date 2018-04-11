@@ -4,6 +4,8 @@
 - https://www.tutorialspoint.com/koajs/koajs_restful_apis.htm
 
 
+# web3 @ Frozeman
+    https://web3js.readthedocs.io/en/1.0/
 
 
 # CouchDB
