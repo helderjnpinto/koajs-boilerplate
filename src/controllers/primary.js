@@ -1,10 +1,10 @@
 import couchdb from '../db/couchdb';
 
-
+/** This is a description of the foo function. */
 export const get = async ctx => {
   ctx.body = 'Hello World!'
 }
-
+/** This is a description of the foo function. */
 export const post = async (ctx, next) => {
   const body = ctx.request.body;
   if (!body.name) ctx.throw(400, '.name required');

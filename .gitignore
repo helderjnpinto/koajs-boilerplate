@@ -59,3 +59,7 @@ typings/
 
 # ignore dist folder
 dist/
+
+# ignore docs 
+
+docs/*

@@ -6,6 +6,8 @@
 
 # web3 @ Frozeman
     https://web3js.readthedocs.io/en/1.0/
+## For subset package Eth 
+    https://web3js.readthedocs.io/en/1.0/web3-eth.html
 
 
 # CouchDB
@@ -23,5 +25,5 @@ When your docker build the image and run you can access in:
 # vscode plugins
 ## Babel ES6/ES7
     - ext install dzannotti.vscode-babel-coloring
-# GRAPHQL 
-    - https://github.com/chentsulin/awesome-graphql
+# JsDoc style guide
+    - https://github.com/shri/JSDoc-Style-Guide

@@ -1,0 +1,29 @@
+{
+    "plugins": ["plugins/markdown"],
+    "sourceType": "module",
+    "templates": {
+        "systemName": "Koa api web3",
+        "footer": "<p style='text-align:right; padding: 10px;'>yarilabs.com<p>",
+        "copyright": "@Yarilabs",
+        "includeDate": "true",
+        "navType": "vertical",
+        "cleverLinks": true,
+        "monospaceLinks": false,
+        "linenums": "true",
+        "collapseSymbols": "true",
+        "inverseNav": "false",
+        "search": "true",
+        "theme": "cyborg",
+        "sort": true,
+        "syntaxTheme": "default"
+    },
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "markdown": {
+        "parser": "gfm",
+        "hardwrap": true,
+        "tags": ["examples"]
+    }
+}
