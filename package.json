@@ -36,7 +36,7 @@
   },
   "babel": {
     "presets": [
-      "latest"
+      "es2017"
     ]
   },
   "repository": {
@@ -75,6 +75,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.2",
+    "babel-preset-es2017": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "concurrently": "^3.5.1",
     "debug": "^3.1.0",
