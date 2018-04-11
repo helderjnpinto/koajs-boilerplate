@@ -1,6 +1,6 @@
+/** @module infura routes  */
 import * as infuraCtrl from '../controllers/infura';
 var Router = require('koa-router');
-
 
 const router = new Router();
 

@@ -9,7 +9,7 @@
     "build": "rimraf dist && npm run prettier  && NODE_ENV=prod babel src -d dist -s",
     "watch": "nodemon",
     "serve-debug": "NODE_ENV=dev nodemon --exec npm run babel-node --inspect ./src/server.js",
-    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Nodemon, Babel\" -c \"green.bold,yellow.bold\" \"npm run serve-debug\" ",
+    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Nodemon, JsDocs\" -c \"green.bold,blue.bold\" \"npm run serve-debug\"",
     "lint": "eslint --fix src",
     "prettier": "prettier --write \"src/**/*.js\"",
     "startDockers": "docker-compose -f ./docker/docker-compose.yml up",
