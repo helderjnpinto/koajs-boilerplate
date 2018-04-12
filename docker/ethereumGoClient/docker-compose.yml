@@ -1,0 +1,18 @@
+# Start the app using docker-compose pull && docker-compose up to make sure you have the latest image
+version: '2.1'
+services:
+  couchdb:
+    # The official image:  https://hub.docker.com/r/ethereum/client-go/
+    image: ethereum/client-go
+    ports:
+      - "8545:8545"
+      - "30303:30303"
+    networks:
+      koa-network:
+        aliases:
+          - ethClientGO
+    volumes:
+
+networks:
+  koa-network:
+    driver: bridge

@@ -8,7 +8,10 @@
     https://web3js.readthedocs.io/en/1.0/
 ## For subset package Eth 
     https://web3js.readthedocs.io/en/1.0/web3-eth.html
-
+    
+# Geth - Go ethereum node
+    - https://geth.ethereum.org/
+    - https://hub.docker.com/r/ethereum/client-go/
 
 # CouchDB
 CMD: npm run startDockers
@@ -27,3 +30,5 @@ When your docker build the image and run you can access in:
     - ext install dzannotti.vscode-babel-coloring
 # JsDoc style guide
     - https://github.com/shri/JSDoc-Style-Guide
+
+
