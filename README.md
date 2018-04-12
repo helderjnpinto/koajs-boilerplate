@@ -3,15 +3,31 @@
 - http://koajs.com/#introduction
 - https://www.tutorialspoint.com/koajs/koajs_restful_apis.htm
 
+## Pre-Requisites
+    - node 
+    - nvm 
+    - (optional) docker tools for containers installed - https://www.docker.com/get-docker
+    - (optional) Vscode for debug configs 
+
 
 # web3 @ Frozeman
     https://web3js.readthedocs.io/en/1.0/
+## Examples html 
+    - https://github.com/ethereum/web3.js/tree/master/example
+
 ## For subset package Eth 
     https://web3js.readthedocs.io/en/1.0/web3-eth.html
     
 # Geth - Go ethereum node
     - https://geth.ethereum.org/
     - https://hub.docker.com/r/ethereum/client-go/
+    - https://github.com/ethereum/go-ethereum/wiki/Installing-Geth
+    - https://github.com/ethereum/go-ethereum/wiki/Installing-Geth#run-inside-docker-container
+
+## npm package geth js console 
+    - https://www.npmjs.com/package/geth
+    - https://github.com/ethereum/wiki/wiki/JavaScript-API
+
 
 # CouchDB
 CMD: npm run startDockers

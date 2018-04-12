@@ -2,7 +2,7 @@ require('./utils/colors');
 var shell = require('shelljs');
 
 
-var __install = async function () {
+var __install = async function (run = true) {
     console.log('\t Executing install docker image'.info);
     if (!shell.which('docker')) {
         console.log('\t Sorry, this script requires docker!'.error);
@@ -14,6 +14,7 @@ var __install = async function () {
         console.log('\t\t Error: docker pull ethereum/client-go failed'.error);
         shell.exit(1);
     }
+    if(run) __run();
 }
 
 var __run = async function (config = '') {

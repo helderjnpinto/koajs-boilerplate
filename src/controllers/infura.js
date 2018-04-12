@@ -1,7 +1,7 @@
 import web3i, {
   web3
 } from '../infura';
-
+var geth = require("geth");
 
 /**
  * _batchRequest 
@@ -20,6 +20,23 @@ const _batchRequest = function (account, _web3i) {
 
 
 export const get = async (ctx, next) => {
+  var options = {
+    networkid: "10101",
+    port: 30303,
+    rpcport: 8545,
+    mine: false
+};
+ 
+geth.start(options, function (err, proc) {
+    if (err) return console.error(err);
+    console.log('proc', proc)
+
+});
+
+
+
+
+
   const q = ctx.query;
 
   const account = web3i.personalAccount;
@@ -30,8 +47,8 @@ export const get = async (ctx, next) => {
   const trans = await _getTransaction(web3i, '0xf3954b44881adc77a05bc2ab1538032344e8e2542ad68e3d391eaedcb7c08859');
   ctx.body = {
     balance: _convertWeiToEth(web3i, balance),
-    trans
-    // gasPrice: await _getGasPrice(web3i)
+    trans,
+    gasPrice: await _getGasPrice(web3i)
   }
   await next()
 }

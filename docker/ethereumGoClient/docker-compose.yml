@@ -1,17 +1,38 @@
 # Start the app using docker-compose pull && docker-compose up to make sure you have the latest image
-version: '2.1'
+version: '3.2'
+
 services:
-  couchdb:
+  node1:
     # The official image:  https://hub.docker.com/r/ethereum/client-go/
     image: ethereum/client-go
-    ports:
-      - "8545:8545"
-      - "30303:30303"
+    entrypoint: geth
+    restart: on-failure
     networks:
       koa-network:
         aliases:
           - ethClientGO
+    command: '--networkid=1377 --rinkeby'
+        # --mine --minerthreads=1 --etherbase=0x0000000000000000000000000000000000000001'
+        # command: --rinkeby --rpcapi "db,personal,eth,net,web3" --rpccorsdomain='*' --networkid=10101 --rpc --rpcaddr="0.0.0.0" 
+        # command: --datadir=/mnt/5297493D4F2EBE58/gethEthereum --rpcapi "db,personal,eth,net,web3" --rpccorsdomain='*' --networkid=1234 --rpc --rpcaddr="0.0.0.0"
     volumes:
+      - type: volume
+        source: /mnt/5297493D4F2EBE58/gethEthereum
+        target: /root/.ethereum
+      # - type: bind
+      #   source: ./static
+      #   target: /opt/app/static
+      # - /mnt/5297493D4F2EBE58/gethEthereum:/root/.ethereum
+      # - ./files/password:/root/files/password:ro
+      # - ./files/genesis.json:/root/files/genesis.json:ro
+      # - ./files/keystore:/mnt/5297493D4F2EBE58/gethEthereum/keystore:rw
+    ports:
+      - "30303:30303"
+      - "30303:30303/udp"
+      - "8545:8545"
+      - "8546:8546"
+volumes:
+  node1-data:
 
 networks:
   koa-network:
